@@ -20,6 +20,7 @@ int main()
 	F9 -> 중단점 설정
 	*/
 
+	int aaaaa;
 	int Left = 7;
 	int Right = 3;
 	int Result = 0;
