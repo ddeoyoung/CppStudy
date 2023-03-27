@@ -15,6 +15,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "005_Operator00", "005_Opera
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Doc", "Doc", "{1A453E47-E7C6-4AFA-9912-C0DD35960EDE}"
 	ProjectSection(SolutionItems) = preProject
+		TextFile1.txt = TextFile1.txt
 		메모리영역.txt = 메모리영역.txt
 		용어.txt = 용어.txt
 	EndProjectSection
