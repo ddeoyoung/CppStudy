@@ -25,6 +25,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "007_Operator01", "007_Opera
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "008_Bit", "008_Bit\008_Bit.vcxproj", "{FE2B1E56-615F-4347-A53B-EF394E83A702}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HomeWork", "HomeWork", "{A3D41BC6-3255-4ADC-B148-B3B263C991B9}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HomeWork_0324", "HomeWork_0324\HomeWork_0324.vcxproj", "{7C1802BC-EBB1-4AA7-A2BF-90D829064A2F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -97,9 +101,20 @@ Global
 		{FE2B1E56-615F-4347-A53B-EF394E83A702}.Release|x64.Build.0 = Release|x64
 		{FE2B1E56-615F-4347-A53B-EF394E83A702}.Release|x86.ActiveCfg = Release|Win32
 		{FE2B1E56-615F-4347-A53B-EF394E83A702}.Release|x86.Build.0 = Release|Win32
+		{7C1802BC-EBB1-4AA7-A2BF-90D829064A2F}.Debug|x64.ActiveCfg = Debug|x64
+		{7C1802BC-EBB1-4AA7-A2BF-90D829064A2F}.Debug|x64.Build.0 = Debug|x64
+		{7C1802BC-EBB1-4AA7-A2BF-90D829064A2F}.Debug|x86.ActiveCfg = Debug|Win32
+		{7C1802BC-EBB1-4AA7-A2BF-90D829064A2F}.Debug|x86.Build.0 = Debug|Win32
+		{7C1802BC-EBB1-4AA7-A2BF-90D829064A2F}.Release|x64.ActiveCfg = Release|x64
+		{7C1802BC-EBB1-4AA7-A2BF-90D829064A2F}.Release|x64.Build.0 = Release|x64
+		{7C1802BC-EBB1-4AA7-A2BF-90D829064A2F}.Release|x86.ActiveCfg = Release|Win32
+		{7C1802BC-EBB1-4AA7-A2BF-90D829064A2F}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7C1802BC-EBB1-4AA7-A2BF-90D829064A2F} = {A3D41BC6-3255-4ADC-B148-B3B263C991B9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {83FF5686-E75A-49ED-B009-AF74468684E3}
