@@ -14,6 +14,8 @@ int main()
 	// 플레이어가 여러분들이 지정한 키를 누르르면 
 
 	// Bullet NewBullet;
+	
+	Bullet NewBullet = Bullet();
 
 	Player NewPlayer = Player();
 	int2 ScreenSize = ConsoleGameScreen::GetMainScreen().GetScreenSize();

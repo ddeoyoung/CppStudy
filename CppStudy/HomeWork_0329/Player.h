@@ -26,10 +26,10 @@ public:
 		return Fire;
 	}
 
-	//void Test(Bullet Test) 
-	//{
+	void Test(Bullet Test) 
+	{
 
-	//}
+	}
 
 protected:
 
@@ -45,3 +45,13 @@ private:
 	// Bullet* NewBullet; // 바깥에 있는 총알을 조작할수 있다.
 };
 
+class Bullet
+{
+public:
+
+
+protected:
+
+private:
+
+};

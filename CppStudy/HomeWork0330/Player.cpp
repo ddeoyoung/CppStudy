@@ -2,15 +2,21 @@
 #include "ConsoleGameScreen.h"
 #include <conio.h>
 #include <Windows.h>
+#include "Bullet.h"
+#include "ShootingGame.h"
 
 Player::Player()
 {
 
 }
-Bullet::Bullet()
-{
 
+int Player::BulletCount = 0;
+
+void Player::ShootingCount()
+{
+	++BulletCount;
 }
+
 // 화면바깥으로 못나가게 하세요. 
 void Player::Input()
 {
@@ -65,9 +71,23 @@ void Player::Input()
 			Pos.Y += 1;
 		}
 		break;
+	case 'f':
+	case 'F':
+		ShootingCount();
+		BulletPtr[BulletCount].SetPos(Pos);
+		BulletPtr[BulletCount].FireOn();
+		break;
+
+		break;
 	default:
 		break;
 	}
 
 	Sleep(InterFrame);
+}
+
+
+void Player::Render()
+{
+	ConsoleGameScreen::GetMainScreen().SetScreenCharacter(Pos, '*');
 }
