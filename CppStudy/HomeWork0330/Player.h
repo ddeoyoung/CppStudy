@@ -17,7 +17,10 @@ public:
 		return Pos;
 	}
 
-	inline void ShootingCount();
+	int GetBulletCount() const
+	{
+		return BulletCount;
+	}
 
 	void Input();
 
@@ -28,12 +31,13 @@ public:
 		BulletPtr = _BulletPtr;
 	}
 
+
 protected:
 
 private:
 	static const int InterFrame = 200;
 
-	static int BulletCount;
+	int BulletCount = 0;
 
 	int2 Pos = int2(0, 0);
 
