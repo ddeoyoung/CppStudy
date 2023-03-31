@@ -3,13 +3,11 @@
 #include <conio.h>
 #include <Windows.h>
 #include "Bullet.h"
-#include "ShootingGame.h"
 
 Player::Player()
 {
-
+	RenderChar = '*';
 }
-
 // 화면바깥으로 못나가게 하세요. 
 void Player::Input()
 {
@@ -17,15 +15,14 @@ void Player::Input()
 	{
 		// 0.5초간 멈춘다.
 		Sleep(InterFrame);
-
+		// 일부러 멈추게 만들겁니다.
+		// continue; 반복문 내부에서만 사용가능
 		return;
 	}
 
 	char Ch = _getch();
 
 	int2 NextPos = { 0, 0 };
-
-	int NewBulletCount = GetBulletCount();
 
 	switch (Ch)
 	{
@@ -67,11 +64,10 @@ void Player::Input()
 		break;
 	case 'f':
 	case 'F':
-		++BulletCount;
-		BulletPtr[BulletCount].SetPos(Pos);
-		BulletPtr[BulletCount].FireOn();
+	{
+		ShotUpdate();
 		break;
-
+	}
 	default:
 		break;
 	}
@@ -79,8 +75,15 @@ void Player::Input()
 	Sleep(InterFrame);
 }
 
-
-void Player::Render()
+void Player::ShotUpdate()
 {
-	ConsoleGameScreen::GetMainScreen().SetScreenCharacter(Pos, '*');
+	Bullet& NewBullet = BulletPtr[BulletCount];
+	NewBullet.SetPos(Pos);
+	NewBullet.On();
+
+	++BulletCount;
+	if (BulletCount >= Bullet::ArrBulletCount)
+	{
+		BulletCount = 0;
+	}
 }
