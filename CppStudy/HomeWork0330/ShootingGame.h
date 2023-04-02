@@ -14,6 +14,7 @@ public:
 
 	static void GameProgress();
 
+
 private:
 	static const int ArrMonsterCount = 14;
 	static Player NewPlayer;
