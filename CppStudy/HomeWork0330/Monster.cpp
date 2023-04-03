@@ -12,4 +12,11 @@ void Monster::Update()
 	{
 		return;
 	}
+	if (true == DownCheck)
+	{
+		DownCheck = false;
+		return;
+	}
+
+	Pos.X += Dir;
 }

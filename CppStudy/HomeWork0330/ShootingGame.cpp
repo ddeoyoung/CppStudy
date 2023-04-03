@@ -67,28 +67,43 @@ void ShootingGame::Collision()
 	}
 
 }
+// 1. 움직이게 한다.
+
+// 2. 끝에 어떠한 몬스터중 단 1개라도 닿았는지 확인한다.
+//    2-1. 왼쪽 끝을체크한다.
+//    2-2. 오른쪽 끝에 닿은걸 체크한다.
+//if (몬스터가 왼쪽 끝에 닿았다)
+//{
+//	int a = 0;
+//}
+
+// 3. 방향을 바꾼다.
+
+// 4. 내려도 본다.
 
 void ShootingGame::MonsterEndCheck()
 {
+	bool Check = false;
+	for (size_t i = 0; i < ArrMonsterCount; i++)
+	{
+		int2 NextPos = ArrMonster[i].GetNextPos();
 
-	// 1. 움직이게 한다.
+		if (true == ConsoleGameScreen::GetMainScreen().IsScreenOver(NextPos))
+		{
+			Check = true;
+			break;
+		}
+	}
 
-	// 2. 끝에 어떠한 몬스터중 단 1개라도 닿았는지 확인한다.
-	//    2-1. 왼쪽 끝을체크한다.
-	//    2-2. 오른쪽 끝에 닿은걸 체크한다.
-	//if (몬스터가 왼쪽 끝에 닿았다)
-	//{
-	//	int a = 0;
-	//}
+	if (false == Check)
+	{
+		return;
+	}
 
-	// 3. 방향을 바꾼다.
-
-	// 4. 내려도 본다.
-
-
-	int2 CurMonsterPos = ArrMonster->GetPos();
-	
-
+	for (size_t i = 0; i < ArrMonsterCount; i++)
+	{
+		ArrMonster[i].Down();
+	}
 }
 
 void ShootingGame::GameUpdate()

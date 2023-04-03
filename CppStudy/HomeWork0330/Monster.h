@@ -7,17 +7,19 @@ public:
 	Monster();
 	void Update();
 
-	void ChangeDir()
+	int2 GetNextPos()
 	{
-		Dir *= (-1);
+		return { Pos.X + Dir, Pos.Y };
 	}
 
-	int GetDir() const
+	void Down()
 	{
-		return Dir;
+		Pos.Y += 1;
+		Dir *= -1;
+		DownCheck = true;
 	}
 
 private:
+	bool DownCheck = false;
 	int Dir = 1;
 };
-
