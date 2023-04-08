@@ -2,7 +2,6 @@
 //
 
 #include <iostream>
-#include <Game>
 
 int main()
 {
