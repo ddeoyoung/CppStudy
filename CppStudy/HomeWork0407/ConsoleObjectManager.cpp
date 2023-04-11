@@ -48,8 +48,6 @@ void ConsoleObjectManager::ConsoleAllObjectRender()
 				continue;
 			}
 
-
-
 			Object->Render();
 		}
 
@@ -57,6 +55,26 @@ void ConsoleObjectManager::ConsoleAllObjectRender()
 
 	ConsoleGameScreen::GetMainScreen().ScreenPrint();
 
+}
+
+void ConsoleObjectManager::ConsoleAllObjectRelease()
+{
+	for (size_t GroupIndex = 0; GroupIndex < AllObject.Count(); GroupIndex++)
+	{
+		for (size_t ObjectIndex = 0; ObjectIndex < AllObject[GroupIndex].Count(); ObjectIndex++)
+		{
+			ConsoleGameObject*& Object = AllObject[GroupIndex][ObjectIndex];
+
+			if (nullptr == Object || false == Object->IsDeath())
+			{
+				continue;
+			}
+
+			delete Object;
+			Object = nullptr;
+		}
+
+	}
 }
 
 void ConsoleObjectManager::ConsoleAllObjectDelete()

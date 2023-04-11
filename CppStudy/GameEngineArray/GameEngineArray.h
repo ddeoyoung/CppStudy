@@ -1,4 +1,6 @@
 #pragma once
+#include <GameEngineBase/GameEngineDebug.h>
+// #include <Program Files/Adobe/Adobe Creative Cloud Experience/>
 
 typedef int DataType;
 
@@ -14,9 +16,13 @@ public:
 
 	// constrcuter destructer
 	GameEngineArray(size_t _Value)
-		: ArrPtr(new DataType[_Value])
-		, ArrCount(_Value)
 	{
+		if (0 >= _Value)
+		{
+			MsgBoxAssert("0크기의 배열은 만들수 없습니다.");
+		}
+
+		ReSize(_Value);
 		// ArrPtr = new int[100];
 	}
 
@@ -31,8 +37,18 @@ public:
 
 	GameEngineArray& operator=(const GameEngineArray& _Other)
 	{
-		ArrCount = _Other.ArrCount;
-		ArrPtr = _Other.ArrPtr;
+		// 얕은 복사라고 합니다.
+		//ArrCount = _Other.ArrCount;
+		//ArrPtr = _Other.ArrPtr;
+
+		// 나만의 메모리를 만들고 
+		// 깊은 복사라고 합니다.
+		ReSize(_Other.ArrCount);
+		for (size_t i = 0; i < _Other.ArrCount; i++)
+		{
+			ArrPtr[i] = _Other[i];
+		}
+
 		return *this;
 	}
 
@@ -41,7 +57,7 @@ public:
 		return ArrCount;
 	}
 
-	DataType& operator[](size_t _Index)
+	DataType& operator[](size_t _Index) const
 	{
 		return ArrPtr[_Index];
 	}
@@ -56,7 +72,13 @@ public:
 
 		// 기존의 있던 값에서 현재의 배열이 복사한다음 삭제해야 한다.
 
-		
+		DataType* NewPtr = new DataType[_Value];
+		int CopySize = _Value < ArrCount ? _Value : ArrCount;
+
+		for (size_t i = 0; i < CopySize; i++)
+		{
+			NewPtr[i] = ArrPtr[i];
+		}
 
 		if (nullptr != ArrPtr)
 		{
@@ -64,7 +86,7 @@ public:
 			ArrPtr = nullptr;
 		}
 
-		ArrPtr = new DataType[_Value];
+		ArrPtr = NewPtr;
 		ArrCount = _Value;
 	}
 

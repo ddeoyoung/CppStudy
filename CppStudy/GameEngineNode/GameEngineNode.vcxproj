@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{4b656e14-509d-4151-a4eb-8d3d7088f763}</ProjectGuid>
-    <RootNamespace>GameEngineArray</RootNamespace>
+    <ProjectGuid>{76ecef61-eab1-4621-afc7-d2c928ffdcfe}</ProjectGuid>
+    <RootNamespace>GameEngineNode</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,17 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="GameEngineArray.h">
-      <SubType>
-      </SubType>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="GameEngineArray.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="GameEngineNode.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

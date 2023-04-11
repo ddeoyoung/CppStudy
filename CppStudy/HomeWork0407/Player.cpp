@@ -14,6 +14,30 @@ Player::Player()
 	SetPos(ConsoleGameScreen::GetMainScreen().GetScreenSize().Half());
 
 }
+
+bool Player::IsBomb(int2 _NextPos)
+{
+	// 폭탄이 설치되었다면 못통과하게 만들기
+	GameEngineArray<ConsoleGameObject*>& BombGroup
+		= ConsoleObjectManager::GetGroup(ObjectOrder::Bomb);
+
+	for (int i = 0; i < BombGroup.Count(); i++) 
+	{
+		if (nullptr == BombGroup[i])
+		{
+			continue;
+		}
+
+		// 플레이어의 NextPos와 폭탄의 Pos를 Check
+		// 위치가 같으면 IsBomb은 true 반환
+		if (true == _NextPos.Check(BombGroup[i]->GetPos()))
+		{
+			return true;
+		}
+	}
+	return false;
+}
+
 // 화면바깥으로 못나가게 하세요. 
 void Player::Update()
 {
@@ -32,7 +56,9 @@ void Player::Update()
 	case 'A':
 		NextPos = Pos;
 		NextPos.X -= 1;
-		if (false == ConsoleGameScreen::GetMainScreen().IsScreenOver(NextPos))
+
+		// 폭탄의 위치와 같지 않으면서 스크린을 벗어나지 않아야 움직일 수 있다.
+		if (false == IsBomb(NextPos) && false == ConsoleGameScreen::GetMainScreen().IsScreenOver(NextPos))
 		{
 			Pos.X -= 1;
 		}
@@ -41,7 +67,8 @@ void Player::Update()
 	case 'D':
 		NextPos = Pos;
 		NextPos.X += 1;
-		if (false == ConsoleGameScreen::GetMainScreen().IsScreenOver(NextPos))
+
+		if (false == IsBomb(NextPos) && false == ConsoleGameScreen::GetMainScreen().IsScreenOver(NextPos))
 		{
 			Pos.X += 1;
 		}
@@ -50,7 +77,8 @@ void Player::Update()
 	case 'W':
 		NextPos = Pos;
 		NextPos.Y -= 1;
-		if (false == ConsoleGameScreen::GetMainScreen().IsScreenOver(NextPos))
+
+		if (false == IsBomb(NextPos) && false == ConsoleGameScreen::GetMainScreen().IsScreenOver(NextPos))
 		{
 			Pos.Y -= 1;
 		}
@@ -59,7 +87,8 @@ void Player::Update()
 	case 'S':
 		NextPos = Pos;
 		NextPos.Y += 1;
-		if (false == ConsoleGameScreen::GetMainScreen().IsScreenOver(NextPos))
+
+		if (false == IsBomb(NextPos) && false == ConsoleGameScreen::GetMainScreen().IsScreenOver(NextPos))
 		{
 			Pos.Y += 1;
 		}
@@ -68,9 +97,8 @@ void Player::Update()
 	case 'F':
 	{
 		Bomb* NewBomb = ConsoleObjectManager::CreateConsoleObject<Bomb>(ObjectOrder::Bomb);
-		NewBomb->Init();
+		NewBomb->Init(BombPower);
 		NewBomb->SetPos(GetPos());
-
 
 		// 폭탄설치 
 		break;

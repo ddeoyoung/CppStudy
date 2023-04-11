@@ -52,3 +52,4 @@ private:
 	bool DeathValue = false;
 
 };
+

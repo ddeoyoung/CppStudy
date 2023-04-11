@@ -26,9 +26,6 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "008_Bit", "008_Bit\008_Bit.vcxproj", "{FE2B1E56-615F-4347-A53B-EF394E83A702}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HomeWork", "HomeWork", "{A3D41BC6-3255-4ADC-B148-B3B263C991B9}"
-	ProjectSection(SolutionItems) = preProject
-		ClassDefault\ADefaultClass.h = ClassDefault\ADefaultClass.h
-	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HomeWork_0324", "HomeWork_0324\HomeWork_0324.vcxproj", "{7C1802BC-EBB1-4AA7-A2BF-90D829064A2F}"
 EndProject
@@ -93,6 +90,10 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GameEngineConsole", "GameEngineConsole\GameEngineConsole.vcxproj", "{0A665978-6D31-495D-B737-E37C631E9A8B}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HomeWork0407", "HomeWork0407\HomeWork0407.vcxproj", "{38F5C802-FB6C-4304-8ED7-C4D2F3A93FA8}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0A665978-6D31-495D-B737-E37C631E9A8B} = {0A665978-6D31-495D-B737-E37C631E9A8B}
+		{8DE1C643-5FC9-4A94-84CF-437B1743A58D} = {8DE1C643-5FC9-4A94-84CF-437B1743A58D}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "021_Pointer02", "021_Pointer02\021_Pointer02.vcxproj", "{289AA810-CEAE-465D-A830-B48DDF6C8F45}"
 EndProject
@@ -103,6 +104,11 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "024_Reference", "024_Reference\024_Reference.vcxproj", "{865931FC-D561-4165-9507-E4970CD2A659}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "025_Const02", "025_Const02\025_Const02.vcxproj", "{E61AE615-59D5-41A0-918A-B617275102F2}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GameEngineNode", "GameEngineNode\GameEngineNode.vcxproj", "{76ECEF61-EAB1-4621-AFC7-D2C928FFDCFE}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0A665978-6D31-495D-B737-E37C631E9A8B} = {0A665978-6D31-495D-B737-E37C631E9A8B}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -448,6 +454,14 @@ Global
 		{E61AE615-59D5-41A0-918A-B617275102F2}.Release|x64.Build.0 = Release|x64
 		{E61AE615-59D5-41A0-918A-B617275102F2}.Release|x86.ActiveCfg = Release|Win32
 		{E61AE615-59D5-41A0-918A-B617275102F2}.Release|x86.Build.0 = Release|Win32
+		{76ECEF61-EAB1-4621-AFC7-D2C928FFDCFE}.Debug|x64.ActiveCfg = Debug|x64
+		{76ECEF61-EAB1-4621-AFC7-D2C928FFDCFE}.Debug|x64.Build.0 = Debug|x64
+		{76ECEF61-EAB1-4621-AFC7-D2C928FFDCFE}.Debug|x86.ActiveCfg = Debug|Win32
+		{76ECEF61-EAB1-4621-AFC7-D2C928FFDCFE}.Debug|x86.Build.0 = Debug|Win32
+		{76ECEF61-EAB1-4621-AFC7-D2C928FFDCFE}.Release|x64.ActiveCfg = Release|x64
+		{76ECEF61-EAB1-4621-AFC7-D2C928FFDCFE}.Release|x64.Build.0 = Release|x64
+		{76ECEF61-EAB1-4621-AFC7-D2C928FFDCFE}.Release|x86.ActiveCfg = Release|Win32
+		{76ECEF61-EAB1-4621-AFC7-D2C928FFDCFE}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -461,6 +475,7 @@ Global
 		{8DE1C643-5FC9-4A94-84CF-437B1743A58D} = {2CA9E406-D850-49E8-88AB-58988C3DB0A1}
 		{0A665978-6D31-495D-B737-E37C631E9A8B} = {2CA9E406-D850-49E8-88AB-58988C3DB0A1}
 		{38F5C802-FB6C-4304-8ED7-C4D2F3A93FA8} = {A3D41BC6-3255-4ADC-B148-B3B263C991B9}
+		{76ECEF61-EAB1-4621-AFC7-D2C928FFDCFE} = {94EDC34D-CD41-426F-BE7C-2ED7C4514F56}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {83FF5686-E75A-49ED-B009-AF74468684E3}

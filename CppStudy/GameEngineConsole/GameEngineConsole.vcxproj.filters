@@ -12,4 +12,9 @@
     <ClInclude Include="ConsoleGameMath.h" />
     <ClInclude Include="GameEngineArray.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Filter Include="DataStruct">
+      <UniqueIdentifier>{5d0cf1cf-61cf-46d7-bea0-9504e749ad6b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
 </Project>
