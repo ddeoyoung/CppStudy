@@ -80,6 +80,9 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "066_ArrayHeap", "066_ArrayHeap\066_ArrayHeap.vcxproj", "{FA00F051-3937-435D-A155-8AB1EAC700C3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataStruct", "DataStruct", "{94EDC34D-CD41-426F-BE7C-2ED7C4514F56}"
+	ProjectSection(SolutionItems) = preProject
+		자료구조.txt = 자료구조.txt
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GameEngineArray", "GameEngineArray\GameEngineArray.vcxproj", "{4B656E14-509D-4151-A4EB-8D3D7088F763}"
 EndProject
@@ -109,6 +112,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GameEngineNode", "GameEngin
 	ProjectSection(ProjectDependencies) = postProject
 		{0A665978-6D31-495D-B737-E37C631E9A8B} = {0A665978-6D31-495D-B737-E37C631E9A8B}
 	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GameEngineVector", "GameEngineVector\GameEngineVector.vcxproj", "{25EA826B-EF85-41FC-BD41-F49CD5E51F72}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -462,6 +467,14 @@ Global
 		{76ECEF61-EAB1-4621-AFC7-D2C928FFDCFE}.Release|x64.Build.0 = Release|x64
 		{76ECEF61-EAB1-4621-AFC7-D2C928FFDCFE}.Release|x86.ActiveCfg = Release|Win32
 		{76ECEF61-EAB1-4621-AFC7-D2C928FFDCFE}.Release|x86.Build.0 = Release|Win32
+		{25EA826B-EF85-41FC-BD41-F49CD5E51F72}.Debug|x64.ActiveCfg = Debug|x64
+		{25EA826B-EF85-41FC-BD41-F49CD5E51F72}.Debug|x64.Build.0 = Debug|x64
+		{25EA826B-EF85-41FC-BD41-F49CD5E51F72}.Debug|x86.ActiveCfg = Debug|Win32
+		{25EA826B-EF85-41FC-BD41-F49CD5E51F72}.Debug|x86.Build.0 = Debug|Win32
+		{25EA826B-EF85-41FC-BD41-F49CD5E51F72}.Release|x64.ActiveCfg = Release|x64
+		{25EA826B-EF85-41FC-BD41-F49CD5E51F72}.Release|x64.Build.0 = Release|x64
+		{25EA826B-EF85-41FC-BD41-F49CD5E51F72}.Release|x86.ActiveCfg = Release|Win32
+		{25EA826B-EF85-41FC-BD41-F49CD5E51F72}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -476,6 +489,7 @@ Global
 		{0A665978-6D31-495D-B737-E37C631E9A8B} = {2CA9E406-D850-49E8-88AB-58988C3DB0A1}
 		{38F5C802-FB6C-4304-8ED7-C4D2F3A93FA8} = {A3D41BC6-3255-4ADC-B148-B3B263C991B9}
 		{76ECEF61-EAB1-4621-AFC7-D2C928FFDCFE} = {94EDC34D-CD41-426F-BE7C-2ED7C4514F56}
+		{25EA826B-EF85-41FC-BD41-F49CD5E51F72} = {94EDC34D-CD41-426F-BE7C-2ED7C4514F56}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {83FF5686-E75A-49ED-B009-AF74468684E3}
