@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -142,12 +142,14 @@
     <ClCompile Include="ConsoleGameMath.cpp" />
     <ClCompile Include="ConsoleGameObject.cpp" />
     <ClCompile Include="ConsoleGameScreen.cpp" />
+    <ClCompile Include="ConsoleObjectManager.cpp" />
     <ClCompile Include="GameEngineConsole.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ConsoleGameMath.h" />
     <ClInclude Include="ConsoleGameObject.h" />
     <ClInclude Include="ConsoleGameScreen.h" />
+    <ClInclude Include="ConsoleObjectManager.h" />
     <ClInclude Include="GameEngineArray.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
