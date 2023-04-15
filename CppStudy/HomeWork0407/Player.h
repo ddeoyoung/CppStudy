@@ -13,6 +13,7 @@ public:
 	void Update() override;
 
 	bool IsBomb(int2 _NextPos);
+	void IsItem();
 
 protected:
 
