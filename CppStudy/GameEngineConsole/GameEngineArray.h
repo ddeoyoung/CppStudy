@@ -50,13 +50,13 @@ public:
 		ReSize(_Other.ArrCount);
 		for (size_t i = 0; i < _Other.ArrCount; i++)
 		{
-			ArrPtr[i] = _Other[i];
+			 ArrPtr[i] = _Other[i];
 		}
 
 		return *this;
 	}
 
-	size_t Count()
+	size_t Count() 
 	{
 		return ArrCount;
 	}
@@ -66,7 +66,7 @@ public:
 		return ArrPtr[_Index];
 	}
 
-	void ReSize(size_t _Value)
+	void ReSize(size_t _Value) 
 	{
 		// 20줄 안팍.
 		// 삼항 연산자 써보시면 좋을겁니다.

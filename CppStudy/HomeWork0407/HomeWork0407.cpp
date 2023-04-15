@@ -7,7 +7,8 @@
 #include <GameEngineConsole/ConsoleGameObject.h>
 #include "Player.h"
 #include "Bomb.h"
-#include "ConsoleObjectManager.h"
+#include "Item.h"
+#include <GameEngineConsole/ConsoleObjectManager.h>
 #include "GameEnum.h"
 #include <conio.h>
 
@@ -15,10 +16,8 @@ int main()
 {
 	GameEngineDebug::LeckCheck();
 
-	int2 ScreenSize = { 20, 10 };
+	int2 ScreenSize = {20, 10};
 	ConsoleGameScreen::GetMainScreen().SetScreenSize(ScreenSize);
-
-
 	// 업캐스팅
 	// 인터페이스 통일
 	// 이 프레임워크 상의 모든 존재들은 업데이트와 랜더라는 인터페이스를 
@@ -29,6 +28,8 @@ int main()
 	// 1번 그룹속한다.
 	ConsoleObjectManager::CreateConsoleObject<Player>(ObjectOrder::Player);
 
+	ConsoleObjectManager::CreateConsoleObject<Item>(ObjectOrder::Item);
+
 	// CreateConsoleObject<Monster>(2);
 
 
@@ -37,7 +38,6 @@ int main()
 		ConsoleObjectManager::ConsoleAllObjectUpdate();
 		ConsoleObjectManager::ConsoleAllObjectRender();
 		ConsoleObjectManager::ConsoleAllObjectRelease();
-
 		Sleep(200);
 	}
 

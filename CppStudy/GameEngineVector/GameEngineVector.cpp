@@ -15,25 +15,26 @@
 // 벡터 10개를 만들고도
 // [][][][][][][][][][]
 
-typedef int DataType;
+// typedef int DataType;
 
-class MyVector
+template<typename DataType>
+class MyVector 
 {
 
 public:
-    MyVector()
+    MyVector() 
     {
 
     }
 
-    void push_back(const DataType& _Value)
+    void push_back(const DataType& _Value) 
     {
         //  0           0
         // 배열크기가 감당할수 있나?
         if (Size + 1 > Capacity)
         {
             // 더 크게 할당하자.
-            reserve((Capacity + 1) * 1.5);
+            reserve((Capacity + 1)* 1.5);
             // 확장해야 합니다.
         }
 
@@ -41,7 +42,7 @@ public:
         ++Size;
     }
 
-    void reserve(size_t _Value)
+    void reserve(size_t _Value) 
     {
         DataType* NewPtr = new DataType[_Value];
         size_t CopySize = _Value < Capacity ? _Value : Capacity;
@@ -61,7 +62,7 @@ public:
         Capacity = _Value;
     }
 
-    size_t size()
+    size_t size() 
     {
         return Size;
     }
@@ -87,7 +88,7 @@ private:
     // 넣어준 원소의 크기
     size_t Size = 0;
 
-    DataType* ArrData = nullptr;
+	DataType* ArrData = nullptr;
 };
 
 //class PArray 
@@ -99,7 +100,7 @@ int main()
 {
 
     {
-        MyVector Test;
+        MyVector<int> Test;
 
         Test.reserve(10);
 
