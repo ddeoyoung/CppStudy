@@ -139,7 +139,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Body.cpp" />
+    <ClCompile Include="GameEnum.cpp" />
+    <ClCompile Include="Head.cpp" />
     <ClCompile Include="HomeWork0414.cpp" />
+    <ClCompile Include="Parts.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GameEngineBase\GameEngineBase.vcxproj">
@@ -148,6 +152,12 @@
     <ProjectReference Include="..\GameEngineConsole\GameEngineConsole.vcxproj">
       <Project>{0a665978-6d31-495d-b737-e37c631e9a8b}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Body.h" />
+    <ClInclude Include="GameEnum.h" />
+    <ClInclude Include="Head.h" />
+    <ClInclude Include="Parts.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

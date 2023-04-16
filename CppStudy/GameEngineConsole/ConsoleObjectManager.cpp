@@ -56,7 +56,7 @@ void ConsoleObjectManager::ConsoleAllObjectRender()
 		{
 			ConsoleGameObject* Object = *Start;
 
-			if (nullptr == Object || false == Object->IsUpdate())
+			if (nullptr == Object || false == Object->IsUpdate() || true == Object->IsDeath())
 			{
 				continue;
 			}

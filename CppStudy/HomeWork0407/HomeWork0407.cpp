@@ -19,6 +19,7 @@ int main()
 	int2 ScreenSize = {20, 10};
 	ConsoleGameScreen::GetMainScreen().SetScreenSize(ScreenSize);
 
+
 	ConsoleObjectManager::CreateConsoleObject<Player>(ObjectOrder::Player);
 	ConsoleObjectManager::CreateConsoleObject<Item>(ObjectOrder::Item);
 

@@ -22,6 +22,7 @@ bool Player::IsBomb(int2 _NextPos)
 	std::list<ConsoleGameObject*>& BombGroup
 		= ConsoleObjectManager::GetGroup(ObjectOrder::Bomb);
 
+
 	for (ConsoleGameObject* Ptr : BombGroup)
 	{
 		if (nullptr == Ptr)
@@ -62,6 +63,7 @@ void Player::IsItem()
 			ConsoleObjectManager::CreateConsoleObject<Item>(ObjectOrder::Item); // 아이템 랜덤위치 재생성
 		}
 	}
+	return;
 }
 
 void Player::Update()

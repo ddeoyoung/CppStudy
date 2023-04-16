@@ -5,10 +5,13 @@ class int2
 {
 
 public:
+
 	static const int2 Left;
 	static const int2 Right;
 	static const int2 Up;
 	static const int2 Down;
+
+	static const int2 Stop;
 
 	int X = 0;
 	int Y = 0;

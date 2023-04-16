@@ -2,7 +2,7 @@
 
 enum class ObjectOrder
 {
-	Bomb, // = 0
-	Item,
-	Player,
+	Head, // = 0
+	Body,
+
 };
