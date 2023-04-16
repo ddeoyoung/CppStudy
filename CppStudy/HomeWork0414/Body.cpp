@@ -37,5 +37,5 @@ void Body::Update()
 	}
 	SetPos(GetPrev()->GetPos());
 
-	// ConsoleGameObject::Update();
+	ConsoleGameObject::Update();
 }

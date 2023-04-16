@@ -26,6 +26,7 @@ public:
 	}
 
 	void Start();
+	void BackRender();
 
 	Parts* GetLastPart()
 	{

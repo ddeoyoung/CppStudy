@@ -29,7 +29,7 @@ int main()
 
 
 	Parts* Start = new Head(); // Head가 시작 Parts
-
+	Body::CreateBody();
 
 
 	while (true == Head::IsPlay)
