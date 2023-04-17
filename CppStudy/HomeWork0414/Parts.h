@@ -1,5 +1,6 @@
 #pragma once
 #include <GameEngineConsole/ConsoleGameObject.h>
+#include <GameEngineBase/GameEngineDebug.h>
 
 // Ό³Έν :
 class Parts : public ConsoleGameObject

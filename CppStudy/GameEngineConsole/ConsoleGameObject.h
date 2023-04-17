@@ -27,7 +27,7 @@ public:
 
 	bool IsUpdate()
 	{
-		return UpdateValue;
+		return UpdateValue && false == IsDeath();
 	}
 
 	void On()
