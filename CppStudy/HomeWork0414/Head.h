@@ -23,7 +23,7 @@ protected:
 	void NewBodyCreateCheck();
 
 private:
-	int2 Dir = int2::Stop; // 처음 시작할 때, 뱀은 정지상태
+	int2 Dir = int2::Up; // 처음 시작할 때, 뱀은 정지상태
 
 };
 

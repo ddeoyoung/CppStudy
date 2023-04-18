@@ -11,10 +11,6 @@ public:
 	Body();
 	~Body();
 
-	static void CreateBody();
-
-	static Body* GetCurBody();
-
 	// delete Function
 	Body(const Body& _Other) = delete;
 	Body(Body&& _Other) noexcept = delete;
@@ -25,5 +21,5 @@ protected:
 	void Update() override;
 
 private:
-	static Body* CurBody;
+
 };

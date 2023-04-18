@@ -10,8 +10,8 @@ public:
 	static const int2 Right;
 	static const int2 Up;
 	static const int2 Down;
+	static const int2 Zero;
 
-	static const int2 Stop;
 
 	int X = 0;
 	int Y = 0;
@@ -37,6 +37,13 @@ public:
 		int2 ReturnValue = *this;
 		ReturnValue.X += _Other.X;
 		ReturnValue.Y += _Other.Y;
+		return ReturnValue;
+	}
+	int2 operator-(const int2& _Other) const
+	{
+		int2 ReturnValue = *this;
+		ReturnValue.X -= _Other.X;
+		ReturnValue.Y -= _Other.Y;
 		return ReturnValue;
 	}
 

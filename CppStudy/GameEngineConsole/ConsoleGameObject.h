@@ -5,7 +5,7 @@
 class ConsoleGameObject
 {
 public:
-	inline void SetPos(const int2& _Value)
+	virtual inline void SetPos(const int2& _Value)
 	{
 		Pos = _Value;
 	}
@@ -45,7 +45,7 @@ public:
 
 protected:
 	int2 Pos;
-	char RenderChar = ' ';
+	wchar_t RenderChar = L'£À';
 
 private:
 	bool UpdateValue = true;

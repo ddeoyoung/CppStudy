@@ -10,46 +10,60 @@ public:
 	Parts();
 	~Parts();
 
-	Parts* GetNext()
-	{
-		return Next;
-	}
-
-	Parts* GetPrev()
-	{
-		return Prev;
-	}
-
-	void SetNext(Parts* _NextPart)
-	{
-		Next = _NextPart;
-		Next->Prev = this;
-	}
-
-	void Start();
-	void BackRender();
-
-	Parts* GetLastPart()
-	{
-		if (nullptr == Next)
-		{
-			return this;
-		}
-
-		return Next->GetLastPart();
-	}
-
 	// delete Function
 	Parts(const Parts& _Other) = delete;
 	Parts(Parts&& _Other) noexcept = delete;
 	Parts& operator=(const Parts& _Other) = delete;
 	Parts& operator=(Parts&& _Other) noexcept = delete;
 
+	inline Parts* GetLast()
+	{
+		if (nullptr == Next)
+		{
+			return this;
+		}
+
+		return Next->GetLast();
+	}
+
+	inline Parts* GetNext()
+	{
+		return Next;
+	}
+
+	inline void SetNext(Parts* _Next)
+	{
+		if (nullptr == _Next)
+		{
+			MsgBoxAssert("자신의 NextNode를 nullptr로 세팅하려고 했습니다.");
+		}
+
+		Next = _Next;
+	}
+
+	inline int2 GetPrevPos()
+	{
+		return PrevPos;
+	}
+
+
+	inline void SetPos(const int2& _Value) override
+	{
+		PrevPos = GetPos();
+		ConsoleGameObject::SetPos(_Value);
+	}
+
+	void NextMove();
+
+
+
 protected:
 	void Update() override;
 
 private:
-	Parts* Next = nullptr;
-	Parts* Prev = nullptr;
-};
+	int2 Dir = int2::Zero;
+	int2 PrevPos = int2::Zero;
 
+	Parts* Prev;
+	Parts* Next;
+};

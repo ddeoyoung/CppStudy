@@ -1,50 +1,67 @@
 #include "Head.h"
 #include <conio.h>
 #include <GameEngineConsole/ConsoleGameScreen.h>
-
+#include <list>
+#include <GameEngineConsole/ConsoleObjectManager.h>
+#include "GameEnum.h"
 #include "Body.h"
 
 bool Head::IsPlay = true;
 
-Head::Head() 
+Head::Head()
 {
-	RenderChar = '@';
+	RenderChar = L'▲';
 	SetPos(ConsoleGameScreen::GetMainScreen().GetScreenSize().Half());
 }
 
-Head::~Head() 
+Head::~Head()
 {
 }
 
-void Head::IsBodyCheck() // Body를 먹었는지 체크
+void Head::IsBodyCheck()
 {
-	Parts* LastPart = GetLastPart();
-	int2 PrevPos = LastPart->GetPos();
+	std::list<ConsoleGameObject*>& BodyGroup
+		= ConsoleObjectManager::GetGroup(SnakeGameOrder::Body);
 
-	LastPart->Start();
-
-	// SetPos(GetPos() + Dir);
-
-	// Body를 먹었다면 Head의 NextParts로 이어붙이고 Body 랜덤 재생성
-	if (GetPos() == Body::GetCurBody()->GetPos())
+	for (ConsoleGameObject* BodyPtr : BodyGroup)
 	{
-		Body::GetCurBody()->SetPos(PrevPos); // 이어붙이기
-		Body::GetCurBody()->BackRender(); // 이어붙인거 Render
-		LastPart->SetNext(Body::GetCurBody()); // 뱀의 LastPart를 이어붙인 Body로 설정
+		// 터질때가 있습니다.
+		if (nullptr == BodyPtr)
+		{
+			continue;
+		}
 
-		Body::CreateBody(); // Body 랜덤 재생성
+		int2 BodyPos = BodyPtr->GetPos();
+		if (GetPos() == BodyPos)
+		{
+			Parts* BodyPart = dynamic_cast<Parts*>(BodyPtr);
+
+			if (nullptr == BodyPart)
+			{
+				MsgBoxAssert("바디그룹 쪽에 바디가 아닌 객체가 들어있었습니다.");
+				return;
+			}
+
+			Parts* Last = GetLast();
+
+			Last->SetNext(BodyPart);
+			ConsoleObjectManager::CreateConsoleObject<Body>(SnakeGameOrder::Body);
+			return;
+		}
+
 	}
 }
 
-void Head::NewBodyCreateCheck() // 새로운 Body가 생성됐는지 체크
+void Head::NewBodyCreateCheck()
 {
 
 }
 
-
+// 화면바깥으로 못나가게 하세요. 
 void Head::Update()
 {
-	// 화면 밖으로 나가면 게임 종료
+	this;
+
 	if (true == ConsoleGameScreen::GetMainScreen().IsScreenOver(GetPos()))
 	{
 		IsPlay = false;
@@ -53,13 +70,27 @@ void Head::Update()
 
 	if (0 == _kbhit())
 	{
-		SetPos(GetPos() + Dir);
-		IsBodyCheck();
-		NewBodyCreateCheck();
+		// SetPos(GetPos() + Dir);
+		// IsBodyCheck();
+		// NewBodyCreateCheck();
 		return;
 	}
 
 	char Ch = _getch();
+
+	// 플레이어의 머리가
+	// 이동하는 방향에 따라서 ▲ ▼ ◀ ▶
+	// ▶▶▶▶▶▶▶▶
+
+	// ▶▶▶▶▶▶▶
+	//            ▼
+
+	// ▶▶▶▶▶▶
+	//          ▼
+	//          ▼
+
+	// 이게 되었다면 2번째 숙제로
+	// 
 
 	int2 NextPos = { 0, 0 };
 
@@ -68,51 +99,41 @@ void Head::Update()
 	case 'a':
 	case 'A':
 		Dir = int2::Left;
+		RenderChar = L'◀';
 		break;
 	case 'd':
 	case 'D':
 		Dir = int2::Right;
+		RenderChar = L'▶';
 		break;
 	case 'w':
 	case 'W':
 		Dir = int2::Up;
+		RenderChar = L'▲';
 		break;
 	case 's':
 	case 'S':
 		Dir = int2::Down;
+		RenderChar = L'▼';
 		break;
 	case 'q':
 	case 'Q':
-		// 게임 종료
 		IsPlay = false;
 		return;
 	default:
 		return;
 	}
 
-	//SetPos(GetPos() + Dir);
-	//IsBodyCheck();
-	//NewBodyCreateCheck();
-
-	
-	//Parts* LastPart = GetLastPart();
-	//int2 PrevPos = LastPart->GetPos();
-
-	//LastPart->Start();
-
-	//SetPos(GetPos() + Dir);
-
-	//// Body를 먹었다면 Head의 NextParts로 이어붙이고 Body 랜덤 재생성
-	//if (GetPos() == Body::GetCurBody()->GetPos())
-	//{
-	//	Body::GetCurBody()->SetPos(PrevPos); // 이어붙이기
-	//	Body::GetCurBody()->BackRender(); // 이어붙인거 Render
-	//	LastPart->SetNext(Body::GetCurBody()); // 뱀의 LastPart를 이어붙인 Body로 설정
-
-	//	Body::CreateBody(); // Body 랜덤 재생성
-	//}
+	// 내가 이렇게 움직였다고 치겠습니다.
 
 
+
+	SetPos(GetPos() + Dir);
+	IsBodyCheck();
+
+	NextMove();
+
+	NewBodyCreateCheck();
 
 	if (true == ConsoleGameScreen::GetMainScreen().IsScreenOver(GetPos()))
 	{

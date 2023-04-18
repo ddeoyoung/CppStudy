@@ -1,41 +1,32 @@
 #include "Body.h"
 #include <GameEngineBase/GameEngineRandom.h>
 #include <GameEngineConsole/ConsoleGameScreen.h>
-#include <GameEngineConsole/ConsoleGameObject.h>
+#include <GameEngineConsole/ConsoleObjectManager.h>
+#include "GameEnum.h"
 
-Body* Body::CurBody = nullptr;
-
-// 새로운 Body 랜덤하게 생성하기
-void Body::CreateBody()
+Body::Body()
 {
+
+	RenderChar = L'◆';
+
 	int X = GameEngineRandom::MainRandom.RandomInt(0, ConsoleGameScreen::GetMainScreen().GetScreenSize().X - 1);
 	int Y = GameEngineRandom::MainRandom.RandomInt(0, ConsoleGameScreen::GetMainScreen().GetScreenSize().Y - 1);
-	CurBody->SetPos({ X, Y });
+	SetPos({ X, Y });
 }
 
-
-Body* Body::GetCurBody()
-{
-	return CurBody;
-}
-
-Body::Body() 
-{
-	RenderChar = 'O';
-}
-
-Body::~Body() 
+Body::~Body()
 {
 }
-
 
 void Body::Update()
 {
-	if (nullptr == GetPrev())
-	{
-		return;
-	}
-	SetPos(GetPrev()->GetPos());
-
-	ConsoleGameObject::Update();
+	//int2 BodyPos = GetPos();
+	//if (BodyPos == int2::Left)
+	//{
+	//	RenderChar = L'◀';
+	//}
+	//else if (BodyPos == int2::Right)
+	//{
+	//	RenderChar = L'▶';
+	//}
 }
