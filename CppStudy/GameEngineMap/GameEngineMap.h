@@ -494,6 +494,7 @@ public:
 	~GameEngineMap()
 	{
 		Root->DeleteNode();
+		Root = nullptr;
 	}
 
 private:
