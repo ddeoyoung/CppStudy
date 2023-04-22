@@ -29,91 +29,93 @@ public:
 
 int main()
 {
-    {
-        std::list<int> Value;
-        Value.push_back(20);
-        Value.push_back(30);
+    //{
+    //    std::list<int> Value;
+    //    Value.push_back(20);
+    //    Value.push_back(30);
 
-        for (int& Test : Value)
-        {
-            // Test = 내부의 변수;
-            Test = 50;
-        }
+    //    for (int& Test : Value)
+    //    {
+    //        // Test = 내부의 변수;
+    //        Test = 50;
+    //    }
 
-        //for (std::list<int>::iterator Iter : Value)
-        //{
-        //}
+    //    //for (std::list<int>::iterator Iter : Value)
+    //    //{
+    //    //}
 
-        int a = 0;
-    }
+    //    int a = 0;
+    //}
 
-    {
-        std::pair<int, int> NewPair;
-        NewPair.first;
-        NewPair.second;
+    //{
+    //    std::pair<int, int> NewPair;
+    //    NewPair.first;
+    //    NewPair.second;
 
 
-        std::map<int, int> Test;
+    //    std::map<int, int> Test;
 
-        std::pair<std::map<int, int>::iterator, bool> Value0
-            = Test.insert(std::pair<int, int>(5, rand()));
+    //    std::pair<std::map<int, int>::iterator, bool> Value0
+    //        = Test.insert(std::pair<int, int>(5, rand()));
 
-        // 키가 겹칠때는 무시하면서 리턴해주는게 정상적으로 들어간 노드를 리턴해준다.
+    //    // 키가 겹칠때는 무시하면서 리턴해주는게 정상적으로 들어간 노드를 리턴해준다.
 
-        std::pair<std::map<int, int>::iterator, bool> Value7
-            = Test.insert(std::pair<int, int>(5, rand()));
+    //    std::pair<std::map<int, int>::iterator, bool> Value7
+    //        = Test.insert(std::pair<int, int>(5, rand()));
 
-        if (Value7.second == false)
-        {
-            int a = 0;
-            // 같은 키를 가진 녀석을 넣어줬다.
-        }
+    //    if (Value7.second == false)
+    //    {
+    //        int a = 0;
+    //        // 같은 키를 가진 녀석을 넣어줬다.
+    //    }
 
-        std::pair<std::map<int, int>::iterator, bool> Value1
-            = Test.insert(std::pair<int, int>(4, rand()));
-        std::pair<std::map<int, int>::iterator, bool> Value2
-            = Test.insert(std::pair<int, int>(7, rand()));
-        std::pair<std::map<int, int>::iterator, bool> Value3
-            = Test.insert(std::pair<int, int>(1, rand()));
-        std::pair<std::map<int, int>::iterator, bool> Value4
-            = Test.insert(std::pair<int, int>(2, rand()));
-        std::pair<std::map<int, int>::iterator, bool> Value5
-            = Test.insert(std::pair<int, int>(15, rand()));
+    //    std::pair<std::map<int, int>::iterator, bool> Value1
+    //        = Test.insert(std::pair<int, int>(4, rand()));
+    //    std::pair<std::map<int, int>::iterator, bool> Value2
+    //        = Test.insert(std::pair<int, int>(7, rand()));
+    //    std::pair<std::map<int, int>::iterator, bool> Value3
+    //        = Test.insert(std::pair<int, int>(1, rand()));
+    //    std::pair<std::map<int, int>::iterator, bool> Value4
+    //        = Test.insert(std::pair<int, int>(2, rand()));
+    //    std::pair<std::map<int, int>::iterator, bool> Value5
+    //        = Test.insert(std::pair<int, int>(15, rand()));
 
-        std::map<int, int>::iterator FindIter = Test.find(1);
-        std::map<int, int>::iterator NextIter = Test.erase(FindIter);
+    //    std::map<int, int>::iterator FindIter = Test.find(1);
+    //    std::map<int, int>::iterator NextIter = Test.erase(FindIter);
 
-        int a = 0;
+    //    int a = 0;
 
-        // 탐색을 용이하게 하기 위해서 사용한다.
-        // 사용성이 좋아요.
+    //    // 탐색을 용이하게 하기 위해서 사용한다.
+    //    // 사용성이 좋아요.
 
-        //for (const std::pair<int, int>& Value : Test)
-        //{
+    //    //for (const std::pair<int, int>& Value : Test)
+    //    //{
 
-        //}
+    //    //}
 
-        // std::pair<int, int> Pair;
-        // int& Value = Pair;
+    //    // std::pair<int, int> Pair;
+    //    // int& Value = Pair;
 
-        std::map<int, int>::iterator StartIter = Test.begin();
-        std::map<int, int>::iterator EndIter = Test.end();
+    //    std::map<int, int>::iterator StartIter = Test.begin();
+    //    std::map<int, int>::iterator EndIter = Test.end();
 
-        // for (; StartIter != EndIter; ++StartIter)
-        // {
-            // Key 
-            // StartIter->first = 20;
+    //    // for (; StartIter != EndIter; ++StartIter)
+    //    // {
+    //        // Key 
+    //        // StartIter->first = 20;
 
-            // std::cout << StartIter->first << std::endl;
-            // Value
-            //StartIter->second = 60;
-        // }
+    //        // std::cout << StartIter->first << std::endl;
+    //        // Value
+    //        //StartIter->second = 60;
+    //    // }
 
-        //for (const std::pair<int, int>& Value : Test)
-        //{
-        //    Value.first = 20;
-        //}
-    }
+    //    //for (const std::pair<int, int>& Value : Test)
+    //    //{
+    //    //    Value.first = 20;
+    //    //}
+    //}
+
+    GameEngineDebug::LeckCheck();
 
     {
         GameEngineMap Test;
@@ -161,16 +163,33 @@ int main()
         //    }
         //}
 
-        
+        // 0420 숙제
         // 거꾸로 출력하기
-        {
-            GameEngineMap::iterator StartIter = Test.rbegin(); // 25
-            GameEngineMap::iterator EndIter = Test.rend();
+        //{
+        //    GameEngineMap::iterator StartIter = Test.rbegin(); // 25
+        //    GameEngineMap::iterator EndIter = Test.rend();
 
-            for (; StartIter != EndIter; --StartIter)
-            {
-                std::cout << StartIter->first << std::endl;
-            }
+        //    for (; StartIter != EndIter; --StartIter)
+        //    {
+        //        std::cout << StartIter->first << std::endl;
+        //    }
+        //}
+
+        std::cout << "그냥 돌리기" << std::endl;
+        GameEngineMap::iterator StartIter = Test.begin();
+        GameEngineMap::iterator EndIter = Test.end();
+        for (; StartIter != EndIter; ++StartIter)
+        {
+            std::cout << StartIter->first << std::endl;
         }
+
+        std::cout << "전위 순회" << std::endl;
+        Test.FirstOrder();
+        std::cout << "중위 순회" << std::endl;
+        Test.MidOrder();
+        std::cout << "후위 순회" << std::endl;
+        Test.LastOrder();
+
     }
+    return 1;
 }
