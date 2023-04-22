@@ -242,6 +242,27 @@ public:
 			std::cout << Pair.first << std::endl;
 
 		}
+
+		// ¼÷Á¦
+		void DeleteNode()
+		{
+			if (nullptr != LeftChild)
+			{
+				LeftChild->DeleteNode();
+			}
+			if (nullptr != RightChild)
+			{
+				RightChild->DeleteNode();
+			}
+
+			MapNode* CurNode = this;
+			if (nullptr != CurNode)
+			{
+				delete CurNode;
+				CurNode = nullptr;
+			 }
+		}
+
 	};
 
 	class iterator
@@ -458,8 +479,7 @@ public:
 
 	void FirstOrder()
 	{
-		Root->FirstOrder();
-	}
+		Root->FirstOrder();	}
 
 	void MidOrder()
 	{
@@ -469,6 +489,11 @@ public:
 	void LastOrder()
 	{
 		Root->LastOrder();
+	}
+
+	~GameEngineMap()
+	{
+		Root->DeleteNode();
 	}
 
 private:
